@@ -29,12 +29,6 @@
           (let [[first & rem] left]
              (recur rem (conj processed (f first)))))))
 
-
-;; (defn mapset2
-;;   "Map but it returns set"
-;;   [f [args]]
-;;   (map f args))
-
 ;; (def dec9 (dec-maker 9))
 ;; (println (dec9 10))
 
