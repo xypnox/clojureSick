@@ -41,3 +41,20 @@
 (defn glitter-filter
   [minimum-glitter records]
   (filter #(>= (:glitter-index %) minimum-glitter) records))
+
+(defn get-Names
+  [records]
+  (map :name records))
+
+(defn append
+  [record records]
+  (conj records record))
+
+(defn validate
+  [record keymap]
+  (every? identity (map record keymap)))
+
+(defn csvify
+  [records]
+  (clojure.string/join "\n" (map #(clojure.string/join "," (map % vamp-keys)) records)))
+;; (defn )
